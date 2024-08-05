@@ -3,11 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Completed</title>
+    <title>Registration Form</title>
+    <link rel="icon" href="/Forms/tap.jpg">
 </head>
 <body>
-    <h1>Tanks for Register</h1>
-    <h3>Welcom to Tap Acadami</h3>
-    <a href="https://thetapacademy.com/coding-courses/">Click here to check our website</a>
+        <!-- <img src="./tap.jpg" alt="" height="400px" width="400"> -->
+
+    
+    <marquee behavior="" direction="right">
+        <h1>Course Registration Form</h1>
+    </marquee>
+    
+
+<fieldset>
+    <legend>Personal Information</legend>
+
+<form action="./Registration-Completed.html">
+    <table>
+        <tr>
+            <td>
+                <label for="">First Name</label>
+            </td>
+            <td>
+                <input type="text" placeholder="Entern name ">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="">Surname</label>
+            </td>
+            <td>
+                <input type="text" placeholder="Enter Surname">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="">Mobile Number</label>
+            </td>
+            <td>
+                <input type="tel" placeholder="Enter Mobile Number">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="">Email</label>
+            </td>
+            <td>
+                <input type="email" placeholder="Enter Email">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="">Password</label>
+            </td>
+            <td>
+                <input type="password" placeholder="Enter Password">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="">Conform Password</label>
+            </td>
+            <td>
+                <input type="password" placeholder="Re-enter Password">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="">DOB</label>
+            </td>
+            <td>
+                <input type="date">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="">Gender</label>
+            </td>
+            <td>
+                <input type="radio" name="Gender" value="Male">Male
+                <input type="radio" name="Gender" value="Female">Female
+                <input type="radio" name="Gender" value="Custom">Custom
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="">Select Country</label>
+            </td>
+            <td>
+                <select >
+                    <option value="">India</option>
+                    <option value="">USA</option>
+                    <option value="">Pakistan</option>
+                    <option value="">North Korea</option>
+                    <option value="">Sounth Korea</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="">Upload Picture</label>
+            </td>
+            <td>
+                <input type="file">
+            </td>
+            
+        </tr>
+
+        
+        <tr>
+            <td>
+                <input type="reset">
+            </td>
+        </tr>
+    </table>
+
+    </fieldset>
+                                                               <!-- Course Details -->
+    <fieldset>
+        <legend>Course Details</legend>
+        <label for="">Select Courses</label> <br>
+        <select >
+            <option value="">Python Full Stack</option>
+            <option value="">Java Full Stack</option>
+            <option value="">Data Science</option>
+        </select><br>
+        <label for="">Delivery Mode</label>
+        <input type="checkbox" name="Delivery Mode" value="Online">ONLINE
+        <input type="checkbox" name="Delivery Mode" value="Offline">OFFLINE
+        <br  />
+        <label >Comment</label> <br>
+
+        <input  type="text area" col="20",row="20" required> <br>
+
+    </fieldset>
+    <input type="submit" ><br>
+
+    <button>
+        <a href="mailto:katikamsiva15@gmail.com"> Contact us</a>
+    </button> <br>
+
+    <button>
+        <a href="./tap.jpg" download=""> Click here</a>
+    </button><br>
+    
+    <iframe src="https://thetapacademy.com/" frameborder="0" height="600px" width="1800px"></iframe>
+
+</form>
+
+
 </body>
 </html>
