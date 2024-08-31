@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrendCart - Explore Products</title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #282c34;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding-top: 10px;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            font-size: 1.1rem;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #61dafb;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #b236e8;
+            transform: scale(1.05);
+        }
+
+        /* Main Layout */
+        .products-page {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .sidebar {
+            flex: 1;
+            max-width: 250px;
+        }
+
+        .filters ul {
+            padding: 0;
+        }
+
+        /* Style for list items in the sidebar */
+        .sidebar ul.filters li {
+            list-style-type: none;  /* Remove default bullet points */
+            margin-bottom: 15px;  /* Add space between items */
+        }
+
+        .sidebar ul.filters li a {
+            display: block;  /* Make the entire list item clickable */
+            padding: 12px 20px;  /* Add padding for better spacing */
+            background-color: #f4f4f4; /* Light background for the list item */
+            color: #333; /* Text color */
+            text-decoration: none; /* Remove underline from links */
+            border-radius: 8px; /* Rounded corners */
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+        }
+
+        /* Hover effect for list items */
+        .sidebar ul.filters li a:hover {
+            background-color: #61dafb; /* Change background color on hover */
+            color: #fff; /* Change text color on hover */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Increase shadow depth on hover */
+            transform: translateY(-2px); /* Slight upward movement on hover */
+        }
+
+        /* Active state styling */
+        .sidebar ul.filters li a.active {
+            background-color: #282c34; /* Dark background for active item */
+            color: #ffffff; /* White text for active item */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Enhanced shadow for active item */
+        }
+
+        .product-list {
+            flex: 3; /* Fill the remaining space */
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        /* Product Cards */
+        .product-card {
+            background-color: #ffffff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .product-card img {
+            max-width: 100%;
+            height: auto; /* Ensure images keep their aspect ratio */
+            border-radius: 5px;
+            transition: transform 0.3s;
+            margin-bottom: 15px; /* Space between image and text */
+        }
+
+        .product-card h3 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            color: #444;
+        }
+
+        .product-card p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .product-card .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #282c34;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .product-card .btn:hover {
+            background-color: #3a3f48;
+            transform: translateY(-2px);
+        }
+
+        .product-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #282c34;
+            color: #ffffff;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 30px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .products-page {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>TrendCart</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="./pro.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="products-page">
+        <aside class="sidebar">
+            <h3>Categories</h3>
+            <ul class="filters">
+                <li>
+                    <a href="./Electrods.html">Electronics</a>
+                </li>
+                <li>
+                    <a href="./Fasions.html">Fasions</a>
+                </li>
+                <li>
+                    <a href="./HomeProducts.html">Home Products</a>
+                </li>
+                <li>
+                    <a href="./BeautyProducts.html">Beauty Products</a>
+                </li>
+            </ul>
+        </aside>
+
+        <section class="product-list">
+            <div class="product-grid">
+                <div class="product-card electronics">
+                    <img src="./img.png/electonic1.png" alt="Electronics 1">
+                    <h3>Electronics Product 1</h3>
+                    <p>Mobiles</p>
+                    <a href="#" class="btn">View Details</a>
+                </div>
+                <div class="product-card fashion">
+                    <img src="./img.png/fasion1.png" alt="Fashion 1">
+                    <h3>Fashion Dress Products 1</h3>
+                    <p>Clothes</p>
+                    <a href="#" class="btn">View Details</a>
+                </div>
+                <div class="product-card home-essentials">
+                    <img src="./img.png/homeproducts1.png" alt="Home Essentials 1" height="200px">
+                    <h3>Home Essentials Product 1</h3>
+                    <p>Items</p>
+                    <a href="#" class="btn">View Details</a>
+                </div>
+                <div class="product-card beauty-products">
+                    <img src="./img.png/beauty1.png" alt="Beauty Products 1">
+                    <h3>Beauty Cream Products</h3>
+                    <p>Face Creams</p>
+                    <a href="#" class="btn">View Details</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 TrendCart. All rights reserved.</p>
+    </footer>
+</body>
+</html>

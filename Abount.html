@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrendCart - About Us</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header .logo h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            font-size: 1.1rem;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #51f4ad;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #4fa3d5;
+            transform: scale(1.05);
+        }
+        /* Banner */
+        .banner {
+            
+            background: linear-gradient(135deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+            color: #fff;
+            text-align: center;
+            padding: 120px 20px;
+            border-bottom: 5px solid #fff;
+            position: relative;
+            
+        }
+
+        .banner h2 {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 7px rgba(0,0,0,0.3);
+        }
+
+        .banner p {
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+        }
+
+       
+
+        /* About Section */
+        .about {
+            padding: 60px 20px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(240,240,240,1) 100%);
+            border-top: 5px solid #e0e0e0;
+            position: relative;
+        }
+
+        .about::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('about-pattern.png');
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+       
+        /* Team Section */
+        .team {
+            background-image: url("./img.png/team.png");
+            /* background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgba(240,240,240,1) 100%); */
+            padding: 60px 20px;
+            text-align: center;
+            border-top: 5px solid #eee;
+            position: relative;
+        }
+
+        .team h2 {
+            font-size: 3rem;
+            margin-bottom: 40px;
+            color: #1d1d1b;
+            text-shadow: 1px 1px 3px rgba(221, 221, 18, 0.914);
+        }
+
+        .team-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .team-member {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            width: 270px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 5px solid #ddd;
+            margin-bottom: 15px;
+        }
+
+        .team-member h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .team-member p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .team-member:hover {
+            transform: translateY(10px);
+            box-shadow: 0 8px 25px rgba(240, 16, 16, 0.25);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+        }
+
+        footer p {
+            font-size: 1.1rem;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>TrendCart</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="./pro.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="./Abount.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="banner">
+        
+        <h2>About Us</h2>
+        <p>Learn more about our mission and the values that drive us.</p>
+    </section>
+    
+    <!-- Team Section -->
+    <section class="team">
+        <h2>Meet Our Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="./img.png/1.jpg" alt="Team Member 1">
+                <h3>Vijay</h3>
+                <p>CEO & Founder</p>
+            </div>
+            <div class="team-member">
+                <img src="./img.png/2.jpg" alt="Team Member 2">
+                <h3>Kalyani</h3>
+                <p>Chief Technology Officer</p>
+            </div>
+            <div class="team-member">
+                <img src="./img.png/3.jpg" alt="Team Member 3">
+                <h3>Reyanth</h3>
+                <p>Head of Marketing</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 TrendCart. All rights reserved.</p>
+    </footer>
+</body>
+</html>

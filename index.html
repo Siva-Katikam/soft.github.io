@@ -3,163 +3,279 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Form</title>
-    <link rel="icon" href="/Forms/tap.jpg">
+    <title>E-Commerce Website</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        /* Header */
+        header {
+            background-color: #07305f;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(126, 4, 4, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+        }
+
+        /* Nav-Bars */
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+
+        /* Banner */
+        .banner {
+            background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+            color: #0a0501;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .banner h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .banner p {
+            font-size: 1.7rem; 
+            margin-bottom: 30px;
+        }
+
+        .banner .btn {
+            padding: 15px 30px;
+            background-color: #ff5733;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5rem;
+            border-radius: 50px;
+        }
+
+        .banner .btn:hover {
+            background-color: #0c0604;
+        }
+
+        .banner img {
+            margin-top: 30px;
+            max-width: 90%;
+            border-radius: 15px;
+        }
+
+        /* Products Section */
+        .products {
+            background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .products h2 {
+            margin-bottom: 40px;
+            font-size: 3rem;
+            color: #fff;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: #fff;
+            padding: 25px;
+            border: 1px solid #0a0707;
+            border-radius: 10px;
+            box-shadow: 0 10px 8px rgb(29, 30, 45);
+        }
+
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .product-card h3 {
+            font-size: 1.7rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .product-card p {
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .product-card .btn {
+            padding: 12px;
+            background-color: #ff5733;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .product-card .btn:hover {
+            background-color: #ff794d;
+            transform: scale(1.05);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+
+        footer p {
+            font-size: 1.2rem;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #ffd700;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .banner h2 {
+                font-size: 2.5rem;
+            }
+            
+            .banner p {
+                font-size: 1.2rem;
+            }
+            
+            .banner .btn {
+                font-size: 1.2rem;
+                padding: 10px 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                margin: 0;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+    </style>
 </head>
 <body>
-        <!-- <img src="./tap.jpg" alt="" height="400px" width="400"> -->
 
-    
-    <marquee behavior="" direction="right">
-        <h1>Course Registration Form</h1>
-    </marquee>
-    
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <h1>TrendCart</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="pro.html">Home</a></li>
+                <li><a href="./Products.html">Products</a></li>
+                <li><a href="./About.html">About</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<fieldset>
-    <legend>Personal Information</legend>
+    <!-- Main Banner -->
+    <section class="banner">
+        <h2>Welcome to TrendCart</h2>
+        <p>Your one-stop shop for all things amazing.</p>
+        <a href="./Products.html" class="btn">Shop Now</a>
+        <div class="banner-image">
+            <img src="./img.png/home.png" alt="Home Image">
+        </div>
+    </section>
 
-<form action="./Registration-Completed.html">
-    <table>
-        <tr>
-            <td>
-                <label for="">First Name</label>
-            </td>
-            <td>
-                <input type="text" placeholder="Entern name ">
-            </td>
-        </tr>
+    <!-- Products Section -->
+    <section class="products">
+        <h2>Featured Products</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="./img.png/tshirt.jpg" alt="Product 1">
+                <h3>Product 1</h3>
+                <p>Rs.200</p>
+                <a href="#" class="btn">Add to Cart</a>
+            </div>
+            <div class="product-card">
+                <img src="./img.png/f12.png" alt="Product 2">
+                <h3>Product 2</h3>
+                <p>Rs.500</p>
+                <a href="#" class="btn">Add to Cart</a>
+            </div>
+            <div class="product-card">
+                <img src="./img.png/1000_F_739196882_BTGaF5CFFZ8XhrTYM9xtl7PfuuDgcSRc.webp" alt="Product 3">
+                <h3>Product 3</h3>
+                <p>Rs.750</p>
+                <a href="#" class="btn">Add to Cart</a>
+            </div>
+            <div class="product-card">
+                <img src="./img.png/tshirt.jpg" alt="Product 4">
+                <h3>Product 4</h3>
+                <p>Rs.1050</p>
+                <a href="#" class="btn">Add to Cart</a>
+            </div>
+        </div>
+    </section>
 
-        <tr>
-            <td>
-                <label for="">Surname</label>
-            </td>
-            <td>
-                <input type="text" placeholder="Enter Surname">
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <label for="">Mobile Number</label>
-            </td>
-            <td>
-                <input type="tel" placeholder="Enter Mobile Number">
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <label for="">Email</label>
-            </td>
-            <td>
-                <input type="email" placeholder="Enter Email">
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <label for="">Password</label>
-            </td>
-            <td>
-                <input type="password" placeholder="Enter Password">
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <label for="">Conform Password</label>
-            </td>
-            <td>
-                <input type="password" placeholder="Re-enter Password">
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <label for="">DOB</label>
-            </td>
-            <td>
-                <input type="date">
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <label for="">Gender</label>
-            </td>
-            <td>
-                <input type="radio" name="Gender" value="Male">Male
-                <input type="radio" name="Gender" value="Female">Female
-                <input type="radio" name="Gender" value="Custom">Custom
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <label for="">Select Country</label>
-            </td>
-            <td>
-                <select >
-                    <option value="">India</option>
-                    <option value="">USA</option>
-                    <option value="">Pakistan</option>
-                    <option value="">North Korea</option>
-                    <option value="">Sounth Korea</option>
-                </select>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <label for="">Upload Picture</label>
-            </td>
-            <td>
-                <input type="file">
-            </td>
-            
-        </tr>
-
-        
-        <tr>
-            <td>
-                <input type="reset">
-            </td>
-        </tr>
-    </table>
-
-    </fieldset>
-                                                               <!-- Course Details -->
-    <fieldset>
-        <legend>Course Details</legend>
-        <label for="">Select Courses</label> <br>
-        <select >
-            <option value="">Python Full Stack</option>
-            <option value="">Java Full Stack</option>
-            <option value="">Data Science</option>
-        </select><br>
-        <label for="">Delivery Mode</label>
-        <input type="checkbox" name="Delivery Mode" value="Online">ONLINE
-        <input type="checkbox" name="Delivery Mode" value="Offline">OFFLINE
-        <br  />
-        <label >Comment</label> <br>
-
-        <input  type="text area" col="20",row="20" required> <br>
-
-    </fieldset>
-    <input type="submit" ><br>
-
-    <button>
-        <a href="mailto:katikamsiva15@gmail.com"> Contact us</a>
-    </button> <br>
-
-    <button>
-        <a href="./tap.jpg" download=""> Click here</a>
-    </button><br>
-    
-    <iframe src="https://thetapacademy.com/" frameborder="0" height="600px" width="1800px"></iframe>
-
-</form>
-
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 TrendCart. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
